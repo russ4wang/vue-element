@@ -109,6 +109,7 @@ export default {
   computed: {
     // 关于v-for v-if，data里未定义的变量遍历使用计算属性。否则使用v-for v-if配合使用
     routes: function () {
+      // 过滤掉item.hidden为true的路由
       return this.$router.options.routes.filter(function (item) {
         return !item.hidden
       })
